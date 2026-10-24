@@ -150,3 +150,7 @@ and in what is sent to the judge; the audio itself stays on your machine.
 `samplepick.py` CLI and library functions; `server.py` + `page.html` + `prompt.md` the web page and chat;
 `sample_judge.py` candidates / scoring / the two-pass ask; `judge.py` the one call to the judge, logged;
 `library.py` the index; `analyze.py` + `timbre_worker.py` optional listening; `config.py` paths.
+
+## License
+
+MIT, see [LICENSE](LICENSE). If samplepick helps your work, a mention or a link back is appreciated.
