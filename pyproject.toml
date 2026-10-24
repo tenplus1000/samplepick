@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "samplepick"
+version = "0.1.0"
+description = "Describe a sound in words; an LLM judge ranks your sample library; listen, tick, copy the keepers for your DAW."
+readme = "README.md"
+requires-python = ">=3.10"
+# Standard library only. Optional extras (not Python dependencies of this package):
+#   - ffmpeg on the PATH, for the optional listening analysis
+#   - a separate python with the AudioCommons `timbral_models` package (numpy 1.x, librosa 0.9) for timbre
+#   - the `claude` or `codex` command (and bubblewrap for codex) for the chat page
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+samplepick = "samplepick:main"
+samplepick-server = "server:main"
+
+[tool.setuptools]
+py-modules = ["samplepick", "server", "sample_judge", "judge", "library", "analyze", "timbre_worker", "config"]
+
+[tool.setuptools.data-files]
+"share/samplepick" = ["page.html", "prompt.md"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
